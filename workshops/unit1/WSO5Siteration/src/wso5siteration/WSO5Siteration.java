@@ -45,9 +45,9 @@ public class WSO5Siteration {
         }
         
         System.out.println("Multiplication Tables : 12");
-        int top=12;
+        int top=10;
         int product=0;
-        int table = 10;
+        int table = 12;
         for (int j = 1 ; j <= top ; j++){
             product = table * j;
             System.out.println("12 * " + j + " = " + product);
