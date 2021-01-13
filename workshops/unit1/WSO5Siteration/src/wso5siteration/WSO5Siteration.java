@@ -39,18 +39,18 @@ public class WSO5Siteration {
         System.out.println("First 5 odd numbers");
         
         int stop;
-        stop=20;
+        stop=22;
         for(int j=1 ; j < stop ; j+=2){
             System.out.println("odd number -> " + j);
         }
         
-        System.out.println("Multiplication Tables : 9");
+        System.out.println("Multiplication Tables : 12");
         int top=12;
         int product=0;
-        int table = 9;
+        int table = 10;
         for (int j = 1 ; j <= top ; j++){
             product = table * j;
-            System.out.println("7 * " + j + " = " + product);
+            System.out.println("12 * " + j + " = " + product);
         }
     }
 }
