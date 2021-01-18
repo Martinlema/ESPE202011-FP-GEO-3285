@@ -76,7 +76,7 @@ public class HWO4Menues {
             product=table * j;
             System.out.println(+table+ "* " + j + " = " + product);
              break;
-             
+             {
             case 4 :
             System.out.println("Good Bye my friend");
             System.exit(0);
@@ -86,6 +86,6 @@ public class HWO4Menues {
            break;
                 
       }
-     } while (option !=4); 
+     } while (option !=0); 
   }
 }
