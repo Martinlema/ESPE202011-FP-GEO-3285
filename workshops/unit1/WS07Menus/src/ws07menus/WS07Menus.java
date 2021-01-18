@@ -48,6 +48,8 @@ public class WS07Menus {
                     sum = addend1 + addend2;
                     System.out.println(" the sum is --> " + sum);
                     break;
+                            
+                            
                 case 2:
                     
                     int minuend;

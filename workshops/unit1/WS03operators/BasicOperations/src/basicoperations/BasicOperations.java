@@ -17,7 +17,7 @@ public class BasicOperations {
     public static void main(String[] args) {
         // TODO code application logic here
         // varible declaration
-        int sum;
+        int sum = 0;
         int addend1;
         int addend2;
         
@@ -56,8 +56,6 @@ public class BasicOperations {
         addend1 = 5;
         addend2 = 18;
        
-       4
-        
         System.out.println("The addition of " + addend1 + " + " + addend2 +  " is equal to -->" + sum);
         
         ++sum;

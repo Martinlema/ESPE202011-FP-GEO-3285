@@ -44,7 +44,7 @@ public class WSO5Siteration {
             System.out.println("odd number -> " + j);
         }
         
-        System.out.println("Multiplication Tables : 12");
+               System.out.println("Multiplication Tables : 12");
         int top=10;
         int product=0;
         int table = 12;
