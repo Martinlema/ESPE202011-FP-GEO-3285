@@ -76,16 +76,16 @@ public class HWO4Menues {
             product=table * j;
             System.out.println(+table+ "* " + j + " = " + product);
              break;
-             {
-            case 4 :
+             
+             
+             
+         case 4:
             System.out.println("Good Bye my friend");
             System.exit(0);
             break;
-            default:
-           System.out.println("Invalid option\n\n\n");
-           break;
-                
-      }
-     } while (option !=0); 
+            
+            }
+    } while (option != 4); 
   }
 }
+   
