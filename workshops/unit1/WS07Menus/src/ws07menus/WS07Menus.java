@@ -85,7 +85,7 @@ public class WS07Menus {
                   quotlent= dividend /divisor;
                     System.out.println("The quotlent is -> "+ quotlent);
                     break;
-                case 5:
+                case 0:
                     System.out.println("Good Bye my friend");
                     System.exit(0);
                     break;
@@ -95,7 +95,7 @@ public class WS07Menus {
 
             }
 
-        } while (option != 5);
+        } while (option != 0);
 
     }
 
