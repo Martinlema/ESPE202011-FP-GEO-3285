@@ -20,7 +20,7 @@ public class WS07Menus {
      */
     public static void main(String[] args) {
         // TODO code application logic here
- Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
         int option;
 
@@ -48,42 +48,41 @@ public class WS07Menus {
                     sum = addend1 + addend2;
                     System.out.println(" the sum is --> " + sum);
                     break;
-                            
-                            
+
                 case 2:
-                    
+
                     int minuend;
                     int subtracting;
                     int difference;
                     System.out.println("enter minuend ->");
-                    minuend= input.nextInt();
+                    minuend = input.nextInt();
                     System.out.println("enter subtracting  -> ");
-                    subtracting= input.nextInt();
-                   difference= minuend - subtracting;
-                    System.out.println("The difference is -> "+ difference );
+                    subtracting = input.nextInt();
+                    difference = minuend - subtracting;
+                    System.out.println("The difference is -> " + difference);
                     break;
+                    
                 case 3:
                     int multiplying;
                     int multiplier;
                     int product;
                     System.out.println("enter multiplying -> ");
-                   multiplying= input.nextInt();
+                    multiplying = input.nextInt();
                     System.out.println("enter multiplier -> ");
-                    multiplier= input.nextInt();
-                   product= multiplying * multiplier;
+                    multiplier = input.nextInt();
+                    product = multiplying * multiplier;
                     System.out.println("The product is -> " + product);
-                   
                     break;
                 case 4:
                     int dividend;
-                    int  divisor;
-                    int  quotlent;
+                    int divisor;
+                    int quotlent;
                     System.out.println("enter dividend -> ");
-                   dividend= input.nextInt();
+                    dividend = input.nextInt();
                     System.out.println("enter divisor -> ");
-                    divisor= input.nextInt();
-                  quotlent= dividend /divisor;
-                    System.out.println("The quotlent is -> "+ quotlent);
+                    divisor = input.nextInt();
+                    quotlent = dividend / divisor;
+                    System.out.println("The quotlent is -> " + quotlent);
                     break;
                 case 0:
                     System.out.println("Good Bye my friend");
