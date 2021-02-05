@@ -126,7 +126,7 @@ public class HW10Functions {
     }
 //FOURTH PORCESS.................................................................
 
-    public static int multiplication(int option3) {
+    public static int showTheMultiplicationTable(int option3) {
         int resultreturn2 = 0;
         int factor = 1;
 
