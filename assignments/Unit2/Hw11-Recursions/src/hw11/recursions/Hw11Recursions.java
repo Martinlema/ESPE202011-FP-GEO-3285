@@ -21,20 +21,20 @@ public class Hw11Recursions {
         System.out.println("==========================================================================================" + " \n"
                 + "| Recursions |" + "\n"
                 + "======================= " + "\n"
-                + "| student Martín Lema | " + "\n"
-                + "| University of the Armed Forces Espe | " + "\n"
-                + "| geospatial engineering career | " + "\n"
+                + "| student: Martín Lema | " + "\n"
+                + "|University: University of the Armed Forces Espe | " + "\n"
+                + "|career: geospatial engineering career | " + "\n"
                 + "==================================================================================================");
         Scanner input = new Scanner(System.in);
-
+          int Number;
+          int Potencial;
+            int Result;
         System.out.println("enter the value of the number you want");
-        int Number = input.nextInt();
+         Number = input.nextInt();
 
         System.out.println("**************please enter the power value for its respective calculation*********************.."
                 + "");
-        int Potencial = input.nextInt ();
-
-        int Result ;
+         Potencial = input.nextInt ();
 
         Result =  PrintSquare( Number , Potencial);
         System.out.println("the result of the factorial number would bef "
