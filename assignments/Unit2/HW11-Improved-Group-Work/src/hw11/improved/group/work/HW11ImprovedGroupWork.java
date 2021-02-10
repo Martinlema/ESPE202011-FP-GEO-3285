@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package hw1.improved.group.project;
+package hw11.improved.group.work;
 
 import java.util.Scanner;
 
@@ -11,12 +11,13 @@ import java.util.Scanner;
  *
  * @author martin lema
  */
-public class HW1ImprovedGroupProject {
+public class HW11ImprovedGroupWork {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        // TODO code application logic here
         System.out.println("==========================================================================================" + " \n"
                 + "|HW1ImprovedGroupProject |" + "\n"
                 + "======================= " + "\n"
@@ -89,14 +90,15 @@ public class HW1ImprovedGroupProject {
     }
 
     private static void CalculateRotationalElValorDisplacement(float pi, float Width, float Length, float Depth) {
-        float V = (((pi) * (Width * Length *Depth )) / (6));
-        
+        float V = (((pi) * (Width * Length * Depth)) / (6));
+
         System.out.println("The rotational displacement is --> " + V);
     }
 
     private static void calculateFlowRate(float flow, float time, float speed) {
-        System.out.println(" The Flow is whit speed -> " +  flow  + " and "
-                + " time -> " + time + " is ->" + speed );
+        System.out.println(" The Flow is whit speed -> " + flow + " and "
+                + " time -> " + time + " is ->" + speed);
     }
 
 }
+
