@@ -40,7 +40,7 @@ public class HW11ImprovedGroupWork {
             System.out.println("0.- Exit");
 
             System.out.println("Enter your menu option-->");
-            option = (int) input.nextFloat();// TODO code application logic here
+            option = (int) input.nextFloat();
 
             switch (option) {
                 case 1:
