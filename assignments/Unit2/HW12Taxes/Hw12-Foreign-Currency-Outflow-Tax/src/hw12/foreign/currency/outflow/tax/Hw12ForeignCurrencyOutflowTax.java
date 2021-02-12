@@ -35,9 +35,8 @@ public class Hw12ForeignCurrencyOutflowTax {
         do {
 
             System.out.println("1.----> Credit or debit cards in person ");
-            System.out.println("2.----> Through Internet ");
+            System.out.println("2.---->THROUGH A WEBSITE ");
             System.out.println("0.----> Exit");
-            System.out.println("");
             System.out.println("Enter your menu option-->");
             option = input.nextInt();
 
@@ -58,7 +57,7 @@ public class Hw12ForeignCurrencyOutflowTax {
                     float AmountOfMoney2 = input.nextFloat();
                     float Tax2 = PrintTaxPercentage2(AmountOfMoney2);
 
-                    System.out.println("the value of the tax is " + Tax2 + "%");
+                    System.out.println("the value of your tax is" + Tax2 + "%");
                     break;
 
                 case 0:
@@ -73,13 +72,14 @@ public class Hw12ForeignCurrencyOutflowTax {
         } while (option != 5);
 
     }
-//------------------------------------------------------------------------------
 
+  //=====================================================================================
+//=====================================================================================
     public static float PrintTaxPercentage(float AmountOfMoney) {
         float Tax = 0.0F;
         float Value = 0.000F;
 
-        if (AmountOfMoney > 5000.00) {
+        if (AmountOfMoney > 5000.0) {
             Tax = 5;
             Value = (float) (AmountOfMoney * 0.05);
         } else {
@@ -91,12 +91,13 @@ public class Hw12ForeignCurrencyOutflowTax {
         return Tax;
 
     }
-
+//=====================================================================================
+ //=====================================================================================
     public static float PrintTaxPercentage2(float AmountOfMoney2) {
         float Tax2 = 0.0F;
         float Value2 = 0.000F;
 
-        if (AmountOfMoney2 > 100.00) {
+        if (AmountOfMoney2 > 100.0) {
             Tax2 = 5;
             Value2 = (float) (AmountOfMoney2 * 0.05);
         } else {

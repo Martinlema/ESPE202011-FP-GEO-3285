@@ -86,9 +86,7 @@ public class HW11ImprovedGroupWork {
 
             }
         } while (option != 0);
-
     }
-
     private static void CalculateRotationalElValorDisplacement(float pi, float Width, float Length, float Depth) {
         float V = (((pi) * (Width * Length * Depth)) / (6));
 
