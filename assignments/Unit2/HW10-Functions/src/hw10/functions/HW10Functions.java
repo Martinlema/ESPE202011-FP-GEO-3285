@@ -18,32 +18,28 @@ public class HW10Functions {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        System.out.println("================== " + " \n"
+        System.out.println("******************************* " + " \n"
                 + "| functions |" + "\n"
-                + "======================= " + "\n"
-                + "| student Martín Lema | " + "\n"
+                + "******************************************* " + "\n"
+                + "| student:Martín Lema | " + "\n"
                 + "| University of the Armed Forces Espe | " + "\n"
                 + "| geospatial engineering career | " + "\n"
-                + "===================================");
+                + "*******************************************");
         System.out.println("");
-        System.out.println("● enter the value of the division ");
-        System.out.println("Enter de dividend :");
-         Scanner input = new Scanner(System.in);
-        int dividend  = input.nextInt();
+        System.out.println(" enter the value of the division ");
+        System.out.println("Enter de dividend please :");
+        Scanner input = new Scanner(System.in);
+        int dividend = input.nextInt();
 
-        System.out.println("Enter de divisor :");
-        int divisor= input.nextInt();
-
+        System.out.println("Enter de divisor please :");
+        int divisor = input.nextInt();
         float quotient = 0;
-
-        quotient = divideTwoNumbers(dividend , divisor);
-
-        System.out.println("The quotient of " + dividend  + "/" +divisor+ " is-->" + quotient);
-
-//SECOND PART-------------------------------------------------------------------
+        quotient = divideTwoNumbers(dividend, divisor);
+        System.out.println("The quotient of " + dividend + "/" + divisor + " is-->" + quotient);
+//second part of the project....................................................................
         System.out.println("");
-        System.out.println("-------------------------------------------------");
-        System.out.println("● Enter the variable of which you want "
+        System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*-*--*-*-*-*-*--");
+        System.out.println(" Enter the variable of which you want "
                 + "to know its square :");
 
         int parameter = input.nextInt();
@@ -61,14 +57,14 @@ public class HW10Functions {
         System.out.println("And the square of  -" + parameter
                 + " is equal to -> " + resultreturn);
 
-//THIRD PART--------------------------------------------------------------------
+//third part of the project......................................................................
         System.out.println("");
-        System.out.println("-------------------------------------------------");
-        System.out.println("● Enter the variable with which you want to carry out the process"
+        System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*--*-*-*");
+        System.out.println("Enter the variable with which you want to carry out the process"
                 + " following equation\n" + "(x ^ 6) + (6x) + 1 ---> (\"x\" is "
                 + "the variable you are going to enter) ");
         System.out.println("");
-        System.out.println(" Enter de variable :");
+        System.out.println(" Enter de variable please:");
 
         int parameter2 = input.nextInt();
         int resultreturn1 = (parameter2 * parameter2) + (2 * parameter2) + 1;
@@ -76,10 +72,10 @@ public class HW10Functions {
         System.out.println("The result of : 2^" + parameter2
                 + "(2*" + parameter2 + ")" + "+ 1 is : " + resultreturn1);
 
-//FOURTH PART-------------------------------------------------------------------
+//quarter of the project...................................................................
         System.out.println("");
-        System.out.println("-------------------------------------------------");
-        System.out.println("●Enter name "
+        System.out.println("-*-*-*-*-*-*-*--*-*-*-*-*--*-*-*--*-*-*-*-*-*-*--*-*-*-*");
+        System.out.println("Enter name please "
                 + "its multiplication table : ");
 
         int parameter3 = input.nextInt();
@@ -99,7 +95,7 @@ public class HW10Functions {
 
     }
 
-//FIRST PROCESS................................................................
+//second part of the project................................................................
     public static float divideTwoNumbers(int dividend, int divisor) {
         float quotient = 0.0F;
         quotient = (float) dividend / (float) divisor;
@@ -107,24 +103,24 @@ public class HW10Functions {
         return quotient;
     }
 
-//SECOND PROCESS....................................................................
+//third part of the project....................................................................
     public static int SquareNumber(int variable) {
         int resultreturn = 0;
 
-        resultreturn =variable * variable;
+        resultreturn = variable * variable;
 
         return resultreturn;
     }
 
-//THIRD PROCESS.......................................................................   
-    public static int processtosolvetheequation(int variable2,int variable1,int variable3) {
+//third part of the project.......................................................................   
+    public static int processtosolvetheequation(int variable2, int variable1, int variable3) {
         int resultreturn1 = 0;
 
         resultreturn1 = (variable1 * variable2) + (2 * variable3) + 1;
 
         return resultreturn1;
     }
-//FOURTH PORCESS.................................................................
+//quarter of the project.................................................................
 
     public static int showTheMultiplicationTable(int option3) {
         int resultreturn2 = 0;
