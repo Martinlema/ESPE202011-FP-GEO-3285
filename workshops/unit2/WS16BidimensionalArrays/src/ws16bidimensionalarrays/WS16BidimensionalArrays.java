@@ -17,7 +17,7 @@ public class WS16BidimensionalArrays {
     public static void main(String[] args) {
         // TODO code application logic here
           System.out.println("==========================================================================================" + " \n"
-                + "|WS16BidimensionalArrays |" + "\n"
+                + "|ws16bidimensionalarrays |" + "\n"
                 + "======================= " + "\n"
                 + "| student: Martín Lema | " + "\n"
                 + "|University: University of the Armed Forces Espe | " + "\n"
@@ -45,10 +45,8 @@ public class WS16BidimensionalArrays {
                 System.out.print("\t " + c[i][j]);
             }
         }
-
         System.out.println("\nAnd Matrix B -> ");
         for (int i = 0; i < 3; i++) {
-            System.out.println("");
             for (int j = 0; j < 3; j++) {
                 System.out.print("\t " + c[i][j]);
             }
@@ -56,7 +54,6 @@ public class WS16BidimensionalArrays {
 
         System.out.println("\nequals to -> ");
         for (int i = 0; i < 3; i++) {
-            System.out.println("");
             for (int j = 0; j < 3; j++) {
                 System.out.print("\t " + c[i][j]);
             }

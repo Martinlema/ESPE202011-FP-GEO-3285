@@ -82,7 +82,7 @@ public class Hw17MatrixTransposition {
     public static float[][] readMatrixElements(int m, int n, String matrixName, Scanner input) {
         float[][] matrix;
         matrix = new float[m][n];
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("--Row Numbers" + (i + 1) + "--");
             for (int j = 0; j < n; j++) {
                 System.out.print(matrixName + "[" + (i + 1) + "][" + (j + 1) + "] ->");
@@ -93,8 +93,7 @@ public class Hw17MatrixTransposition {
     }
 
     public static void transpose(int n, int m, float[][] t, float[][] a) {
-        //transposition operation (transpose)
-        for (int i = 0; i < n; i++) {
+     for (int i = 0; i < 3; i++) {
             for (int j = 0; j < n; j++) {
                 t[i][j] = a[j][i];
             }
@@ -105,7 +104,7 @@ public class Hw17MatrixTransposition {
         float[][] c;
         c = new float[m][n];
 
-        for (int i = 0; i < m; i++) {
+      for (int i = 0; i < 3; i++) {
             for (int j = 0; j < n; j++) {
                 c[i][j] = a[i][j] + b[i][j];
             }
@@ -114,9 +113,9 @@ public class Hw17MatrixTransposition {
     }
 
     public static void prettyPrintMatrix(int m, int n, float[][] matrix) {
-        for (int i = 0; i < m; i++) {
+   for (int i = 0; i < 3; i++) {
             System.out.println("");
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; i < 3; i++) {
                 if (j == 0) {
                     if (i == 0) {
                         System.out.println("\t");
@@ -147,10 +146,10 @@ public class Hw17MatrixTransposition {
     }
 
     public static void printMatrix(int m, int n, float[][] matrix) {
-        for (int i = 0; i < m; i++) {
+        for (int i = 0; i < 3; i++) {
             System.out.println("");
-            for (int j = 0; j < n; j++) {
-                if (j == 0) {
+           for (int u = 0; i < 3; i++) {
+                if (u == 0) {
                     if (i == 0) {
                         System.out.println("\t");
                     } else if (i == m - 1) {
@@ -160,11 +159,11 @@ public class Hw17MatrixTransposition {
                         System.out.println("\t");
                     }
                 }
-                System.out.println(matrix[i][j]);
-                if (j > -1 && j < (n - 1)) {
+                System.out.println(matrix[i][u]);
+                if (u > -1 && u < (n - 1)) {
                     System.out.println("\t");
                 }
-                if (j == (n - 1)) {
+                if (u == (n - 1)) {
                     if (i == 0) {
                         System.out.println("\t");
                     } else if (i == m - 1) {
