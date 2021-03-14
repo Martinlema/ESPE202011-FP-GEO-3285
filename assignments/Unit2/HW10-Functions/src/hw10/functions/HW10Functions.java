@@ -98,7 +98,7 @@ public class HW10Functions {
 //second part of the project................................................................
     public static float divideTwoNumbers(int dividend, int divisor) {
         float quotient = 0.0F;
-        quotient = (float) dividend / (float) divisor;
+        quotient = dividend / (float) divisor;
 
         return quotient;
     }
