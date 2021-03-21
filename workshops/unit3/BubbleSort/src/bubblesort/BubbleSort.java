@@ -22,7 +22,7 @@ public class BubbleSort {
                 + "| University of the Armed Forces Espe | " + "\n"
                 + "| geospatial engineering career | " + "\n"
                 + "*******************************************");
-        int[] integersToSort = {3, 7, 1, 8, 4, 6};
+        int[] integersToSort = {9,7,3,1,4};
 
         System.out.println("UNSORTED INTEGERS");
         printArray(integersToSort);
@@ -30,7 +30,7 @@ public class BubbleSort {
         System.out.println("-------------------------------->");
         printArray(integersToSort);
 
-        int[] integersToSort2 = {8, 1, 7, 2, 5};
+        int[] integersToSort2 = {42,30,-5,7,1,50};
 
         System.out.println("UNSORTED INTEGERS");
         printArray(integersToSort2);
