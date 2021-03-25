@@ -5,9 +5,9 @@
  */
 package ec.edu.espe.sorting.view;
 
+import ec.edu.espe.sorting.controller.Search;
 import ec.edu.espe.sorting.controller.Sorting;
-
-
+import javax.swing.JOptionPane;
 /**
  *
  * @author martin lema
@@ -83,6 +83,11 @@ public class FrmSortingintegers extends javax.swing.JFrame {
         });
 
         btnSearch.setText("Search");
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
 
         jLabel11.setText("Sorted integers");
 
@@ -216,13 +221,28 @@ public class FrmSortingintegers extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSortActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSortActionPerformed
-        int [] integers;
-        int[]  SortedIntegers;
-        integers =new  int[8];
-        SortedIntegers =new int[8];
-        Sorting sorting=new Sorting();
-        String  sortedArrayOfIntegers= "";
+        int[] integers;
+        int[] SortedIntegers;
+        integers = new int[8];
+        SortedIntegers = new int[8];
+        Sorting sorting = new Sorting();
+        String sortedArrayOfIntegers = "";
 
+        readIntegersToArray(integers);
+
+        SortedIntegers = sorting.sortByBubbleSort(integers);
+    
+        SortedIntegers = sorting.sortByBubbleSort(integers);
+
+        //for-each
+        for (int integer : SortedIntegers) {
+            sortedArrayOfIntegers = sortedArrayOfIntegers + "  " + integer;
+        }
+
+        txtSortedIntegers.setText(sortedArrayOfIntegers);
+        lblSortedArray.setText(sortedArrayOfIntegers);
+        }
+    public void readIntegersToArray(int[] integers) throws NumberFormatException {
         integers[0] = Integer.parseInt(txtinteger1.getText());
         integers[1] = Integer.parseInt(txtinteger2.getText());
         integers[2] = Integer.parseInt(txtinteger3.getText());
@@ -232,18 +252,29 @@ public class FrmSortingintegers extends javax.swing.JFrame {
         integers[6] = Integer.parseInt(txtinteger7.getText());
         integers[7] = Integer.parseInt(txtinteger8.getText());
         
-        SortedIntegers =sorting.sortByBubbleSort(integers);
-        
-        //for-each
-        for(int integer:SortedIntegers){
-            sortedArrayOfIntegers =sortedArrayOfIntegers + " " + integer;
-        }
-        
-       txtSortedIntegers.setText(sortedArrayOfIntegers);
-       lblSortedArray.setText(sortedArrayOfIntegers);
-        
+                                               
     }//GEN-LAST:event_btnSortActionPerformed
- /**
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        int index;
+        Search search = new Search();
+        int[] integers;
+        int findInteger;
+
+        integers = new int[8];
+
+        findInteger = Integer.parseInt(txtNumberToSearch.getText());
+
+        readIntegersToArray(integers);
+        index = search.findInteger(integers,findInteger);
+
+        if (index == -1) {
+            JOptionPane.showMessageDialog(null, findInteger + "is NOT found", "Searching", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(null, findInteger + "is found");
+        }
+    }//GEN-LAST:event_btnSearchActionPerformed
+    /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -301,3 +332,4 @@ public class FrmSortingintegers extends javax.swing.JFrame {
     private javax.swing.JTextField txtinteger8;
     // End of variables declaration//GEN-END:variables
 }
+   
