@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
  *
  * @author martin lema
  */
+@SuppressWarnings("serial")
 public class FrmcellPhones extends javax.swing.JFrame {
 
     /**
@@ -46,7 +47,7 @@ public class FrmcellPhones extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setText("client");
+        jLabel1.setText("model");
 
         jLabel3.setText("CELLPHONES");
 
@@ -200,11 +201,8 @@ public class FrmcellPhones extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                new FrmcellPhones().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new FrmcellPhones().setVisible(true);
         });
     }
 
