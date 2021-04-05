@@ -7,7 +7,13 @@ package ec.edu.espe.SalesSystem.view;
 
 import ec.edu.espe.SalesSystem.contoller.Furniturecontroller;
 import ec.edu.espe.SalesSystem.model.Furniture;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.logging.Level;
 import javax.swing.JOptionPane;
+import java.util.logging.Logger;
 /**
  *
  * @author martin lema
@@ -45,8 +51,14 @@ public class Frmfurnitures extends javax.swing.JFrame {
         cmbcondition = new javax.swing.JComboBox<>();
         bntSave = new javax.swing.JButton();
         cmbsize = new javax.swing.JComboBox<>();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtAreaFurnitures = new javax.swing.JTextArea();
+        benShowfurnitures = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
+        setBackground(new java.awt.Color(255, 255, 204));
+        setForeground(new java.awt.Color(255, 255, 51));
 
         jLabel1.setFont(new java.awt.Font("Viner Hand ITC", 0, 24)); // NOI18N
         jLabel1.setText(" UNIVERSITY OF THE ARMED FORCES \"ESPE\"");
@@ -54,26 +66,26 @@ public class Frmfurnitures extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Wide Latin", 0, 14)); // NOI18N
         jLabel2.setText(" FURNITURES ");
 
-        jLabel3.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel3.setText("code");
 
-        jLabel4.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel4.setText("price");
 
-        jLabel5.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel5.setText("size ");
 
-        jLabel6.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel6.setText("colors");
 
-        jLabel7.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel7.setText("Brand ");
 
-        jLabel9.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
         jLabel9.setText("condition");
 
         txtcode.setBackground(new java.awt.Color(153, 255, 255));
-        txtcode.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        txtcode.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
         txtcode.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtcodeActionPerformed(evt);
@@ -81,17 +93,17 @@ public class Frmfurnitures extends javax.swing.JFrame {
         });
 
         txtprice.setBackground(new java.awt.Color(153, 255, 255));
-        txtprice.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        txtprice.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
 
         txtBrand.setBackground(new java.awt.Color(102, 255, 255));
-        txtBrand.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        txtBrand.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
 
         cmbcolors.setBackground(new java.awt.Color(102, 255, 255));
-        cmbcolors.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        cmbcolors.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
         cmbcolors.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Light blue", "Blue and orange", "Blue and red", "rose", "Fuchsia" }));
 
         cmbcondition.setBackground(new java.awt.Color(102, 255, 255));
-        cmbcondition.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        cmbcondition.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
         cmbcondition.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "used", "new" }));
 
         bntSave.setBackground(new java.awt.Color(204, 255, 0));
@@ -105,8 +117,22 @@ public class Frmfurnitures extends javax.swing.JFrame {
         });
 
         cmbsize.setBackground(new java.awt.Color(102, 255, 255));
-        cmbsize.setFont(new java.awt.Font("SimSun", 0, 14)); // NOI18N
+        cmbsize.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
         cmbsize.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "big", "little" }));
+
+        txtAreaFurnitures.setColumns(20);
+        txtAreaFurnitures.setFont(new java.awt.Font("Monotype Corsiva", 0, 24)); // NOI18N
+        txtAreaFurnitures.setRows(5);
+        jScrollPane1.setViewportView(txtAreaFurnitures);
+
+        benShowfurnitures.setBackground(new java.awt.Color(255, 255, 102));
+        benShowfurnitures.setFont(new java.awt.Font("Tw Cen MT Condensed Extra Bold", 0, 18)); // NOI18N
+        benShowfurnitures.setText("Show furnitures");
+        benShowfurnitures.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                benShowfurnituresActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -116,33 +142,36 @@ public class Frmfurnitures extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
+                        .addGap(189, 189, 189)
+                        .addComponent(jLabel2)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(42, 42, 42)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel4)
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel5)
                                     .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addGap(153, 153, 153)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel9))
+                                .addGap(137, 137, 137)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(cmbsize, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(cmbcolors, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(txtprice)
                                     .addComponent(txtcode)
-                                    .addComponent(txtBrand)))
+                                    .addComponent(txtBrand)
+                                    .addComponent(cmbcondition, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addGap(132, 132, 132)
-                                .addComponent(cmbcondition, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(112, 112, 112)
-                        .addComponent(bntSave))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
-                        .addComponent(jLabel2)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(109, 109, 109)
+                                .addComponent(bntSave)
+                                .addGap(54, 54, 54)
+                                .addComponent(benShowfurnitures, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 296, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,26 +179,26 @@ public class Frmfurnitures extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(txtcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jLabel5)
-                        .addGap(30, 30, 30))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cmbsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(txtcode, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(txtprice, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(49, 49, 49)
+                                .addComponent(jLabel5)
+                                .addGap(30, 30, 30))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(cmbsize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel6)
                             .addComponent(cmbcolors, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -177,12 +206,18 @@ public class Frmfurnitures extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(txtBrand, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(45, 45, 45)
-                        .addComponent(jLabel9))
-                    .addComponent(cmbcondition, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addComponent(bntSave)
-                .addGap(60, 60, 60))
+                        .addGap(42, 42, 42)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(cmbcondition, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bntSave, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(benShowfurnitures, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40))
         );
 
         pack();
@@ -190,6 +225,8 @@ public class Frmfurnitures extends javax.swing.JFrame {
 
     private void txtcodeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcodeActionPerformed
         // TODO add your handling code here:
+       //GEN-LAST:event_txtNameActionPerformed
+
     }//GEN-LAST:event_txtcodeActionPerformed
 
     private void bntSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntSaveActionPerformed
@@ -201,7 +238,7 @@ public class Frmfurnitures extends javax.swing.JFrame {
         String Brand;
         boolean isCondition;
         
-        Furniturecontroller furniturecontroller=new Furniturecontroller();
+        Furniturecontroller Furniturecontroller=new Furniturecontroller();
         
         code=Integer.parseInt(txtcode.getText());
         price=Integer.parseInt(txtprice.getText());
@@ -212,10 +249,18 @@ public class Frmfurnitures extends javax.swing.JFrame {
            isCondition=Boolean.parseBoolean((String) cmbcondition.getSelectedItem());
           
             furniture=new Furniture(code,price,size,colors,Brand,isCondition);
-     
+                 Furniturecontroller.save(furniture);
            
             JOptionPane.showMessageDialog(rootPane,furniture.getCode());
+            //GEN-LAST:event_btnSAVEActionPerformed
     }//GEN-LAST:event_bntSaveActionPerformed
+
+    private void benShowfurnituresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_benShowfurnituresActionPerformed
+         Furniturecontroller Furniturecontroller=new Furniturecontroller();
+            txtAreaFurnitures.setText(Furniturecontroller.read());
+         
+         
+    }//GEN-LAST:event_benShowfurnituresActionPerformed
 
     /** 
      * @param args the command line arguments
@@ -243,7 +288,6 @@ public class Frmfurnitures extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Frmfurnitures.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -253,6 +297,7 @@ public class Frmfurnitures extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton benShowfurnitures;
     private javax.swing.JButton bntSave;
     private javax.swing.JComboBox<String> cmbcolors;
     private javax.swing.JComboBox<String> cmbcondition;
@@ -265,6 +310,8 @@ public class Frmfurnitures extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea txtAreaFurnitures;
     private javax.swing.JTextField txtBrand;
     private javax.swing.JTextField txtcode;
     private javax.swing.JTextField txtprice;

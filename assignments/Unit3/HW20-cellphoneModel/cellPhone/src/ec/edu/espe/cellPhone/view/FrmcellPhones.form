@@ -303,6 +303,9 @@
           <Font name="Verdana" size="12" style="0"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtSortedcellActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnSort">
       <Properties>

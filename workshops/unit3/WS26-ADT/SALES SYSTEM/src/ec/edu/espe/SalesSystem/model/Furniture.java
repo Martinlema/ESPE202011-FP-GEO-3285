@@ -10,6 +10,7 @@ package ec.edu.espe.SalesSystem.model;
  * @author martin lema
  */
 public class Furniture {
+
     private int code;
     private int price;
     private String size;
@@ -110,4 +111,3 @@ public class Furniture {
         this.condition = condition;
     }
 }
-    

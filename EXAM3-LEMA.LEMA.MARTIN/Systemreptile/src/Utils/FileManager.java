@@ -16,7 +16,6 @@ import java.io.IOException;
  * @author martin lema
  */
 public class FileManager {
-
     public static boolean createFile(String fileName) {
              boolean created = false;
         try {
@@ -31,6 +30,7 @@ public class FileManager {
 
             }
         } catch (IOException ex) {
+             ex.printStackTrace(); 
             created = false;
         }
         return created;
@@ -46,7 +46,7 @@ public class FileManager {
              System.out.println(" a new record of" + fileName + "was saved");
              saved = true;
          }catch (IOException ex) {
-              ex.printStackTrace();
+             ex.printStackTrace();
              saved = false;
          }
          return saved;
@@ -56,16 +56,18 @@ public class FileManager {
 public static String read ( String fileName){
        fileName = null;
         String text = null;
-        String document ="C:\\Users\\Usuario\\Documents\\CODE\\ESPE202011-FP-GEO-3285\\workshops\\unit3\\WS26-ADT\\SALES SYSTEM\\Furnitures.txt";
+        String document = "C:\\Users\\Usuario\\Documents\\CODE\\ESPE202011-FP-GEO-3285\\EXAM3-LEMA.LEMA.MARTIN\\Systemreptile\\Reptiles.txt";
         try ( BufferedReader textBr = new BufferedReader(new FileReader(document))) {
             while ((fileName = textBr.readLine()) != null) {
                 text = fileName;
             }
         } catch (IOException ex) {
+             ex.printStackTrace();
             System.out.println("Error");
-            ex.printStackTrace();
         }
         return text;
     }
 
  }
+
+

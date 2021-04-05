@@ -17,10 +17,16 @@ public class Furniturecontroller {
     public void save(Furniture furniture){
     String data=furniture.getCode() +"," + furniture.getPrice()+ ","+ furniture.getSize()+" ,"+ furniture.getColors()+","+ furniture.getBrand()+","+ furniture.isCondition();
 FileManager.save(data,"Furnitures");
-    
-    
-} 
-}
+    }
+     public String read(){
+        String data;
+        data =FileManager.read("Furnitures");
+        return data;
+    }
+    }
+
+
+
 
  
 

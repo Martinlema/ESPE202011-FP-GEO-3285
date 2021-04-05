@@ -112,6 +112,11 @@ public class FrmcellPhones extends javax.swing.JFrame {
         txtNamerToSearch.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
 
         txtSortedcell.setFont(new java.awt.Font("Verdana", 0, 12)); // NOI18N
+        txtSortedcell.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSortedcellActionPerformed(evt);
+            }
+        });
 
         btnSort.setFont(new java.awt.Font("Snap ITC", 0, 14)); // NOI18N
         btnSort.setText("SORT");
@@ -279,6 +284,10 @@ public class FrmcellPhones extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_btnSearchActionPerformed
+
+    private void txtSortedcellActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSortedcellActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSortedcellActionPerformed
 
     /**
      * @param args the command line arguments
